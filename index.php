@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+<!-- belajar php dasar -->
     <h1>PHP Dasar</h1>
 
     <?php
@@ -21,10 +21,10 @@
     echo "Umur : $umur ";
     echo '<hr>';
 
+    // data array
     $array_nama = ['Pahrul', 'Irfan', 'ahmad'];
 
     echo 'Nama 1 : ' . $array_nama[0];
-    echo '<br>';
     echo 'Nama 2 : ' . $array_nama[1];
     echo '<hr>';
 
