@@ -42,7 +42,8 @@
                     <td> <?= $row->alamat; ?> </td>
                     <td> <?= $row->hp; ?> </td>
                     <td>
-                        Update | Delete
+                        <a href="hapus.php?id_penulis=<?=$row->id; ?>">Delete</a> |
+                        
                     </td>
                 </tr>
 
