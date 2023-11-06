@@ -13,7 +13,7 @@
 
     <br>
 
-    <a href="tambah.php">Tambah Data</a> 
+    <a href="tambah.php">Tambah Data</a>
 
     <br>
 
@@ -29,21 +29,30 @@
         </thead>
         <tbody>
             <?php
-                include('../setting.php');
-                $no = 1;
-                $query = "SELECT * FROM penulis";
-                $result = mysqli_query($link, $query);
-                while ($row = mysqli_fetch_object($result)) {
-            ?>
-                
+            include('../setting.php');
+            $no = 1;
+            $query = "SELECT * FROM penulis";
+            $result = mysqli_query($link, $query);
+            while ($row = mysqli_fetch_object($result)) {
+                ?>
+
                 <tr>
-                    <td> <?php echo $no++; ?> </td>
-                    <td> <?= $row->nama; ?> </td>
-                    <td> <?= $row->alamat; ?> </td>
-                    <td> <?= $row->hp; ?> </td>
                     <td>
-                        <a href="hapus.php?id_penulis=<?=$row->id; ?>">Delete</a> |
-                        
+                        <?php echo $no++; ?>
+                    </td>
+                    <td>
+                        <?= $row->nama; ?>
+                    </td>
+                    <td>
+                        <?= $row->alamat; ?>
+                    </td>
+                    <td>
+                        <?= $row->hp; ?>
+                    </td>
+                    <td>
+                        <a onclick="return confirm('Anda Yakin ?')" href="hapus.php?id_penulis=<?= $row->id; ?>">Delete</a>|
+
+                        <a href="ubah.php?id_penulis=<?= $row->id; ?>">Edit</a>
                     </td>
                 </tr>
 
