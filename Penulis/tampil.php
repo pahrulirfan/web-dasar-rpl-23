@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 session_start();
 if(!isset($_SESSION['success'])){
@@ -7,6 +8,8 @@ if(!isset($_SESSION['success'])){
 }
 
 ?>
+=======
+>>>>>>> dc6860a056ecc8384775fc7326bab03a79d480d2
 <!DOCTYPE html>
 <html lang="en">
 
