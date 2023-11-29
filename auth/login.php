@@ -16,21 +16,30 @@
             <div class="col-4">
                 <div class="card card-body mt-4">
                     <h3>Login</h3>
-                        <hr>
-                        <form action="" method="post" data-parsley-validate="">
+                    <hr>
 
-                            <input type="email" class="form-control" 
-                            required name="txtemail" placeholder="Masukkan email">
-                            <br>
+                    <?php
+                    require('../setting.php');
+                    if (isset($_POST["btnLogin"])) {
+                        $inputemail = htmlspecialchars($_POST["txtemail"]);
+                        $inputpassword = sha1(htmlspecialchars($_POST["txtpassword"]));
 
-                            <input type="password" class="form-control" required 
-                            name="txtpassword" placeholder="Masukkan password">
+                        echo $inputpassword;
+                    }
+                    ?>
 
-                            <br>
-                            <input type="submit" class="btn btn-info" 
-                            value="Login" name="btnLogin">
+                    <form action="" method="post" data-parsley-validate="">
 
-                        </form>
+                        <input type="email" class="form-control" required name="txtemail" placeholder="Masukkan email">
+                        <br>
+
+                        <input type="password" class="form-control" required name="txtpassword"
+                            placeholder="Masukkan password">
+
+                        <br>
+                        <input type="submit" class="btn btn-info" value="Login" name="btnLogin">
+
+                    </form>
                 </div>
             </div>
         </div>
