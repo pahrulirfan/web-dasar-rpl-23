@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if($_SESSION['login'] == false){
+
+    header('location: ../auth/login.php');
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

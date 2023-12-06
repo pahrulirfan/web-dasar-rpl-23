@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -24,7 +27,29 @@
                         $inputemail = htmlspecialchars($_POST["txtemail"]);
                         $inputpassword = sha1(htmlspecialchars($_POST["txtpassword"]));
 
-                        echo $inputpassword;
+                        // echo $inputpassword;
+
+                        $query = "SELECT * FROM pengguna WHERE email='$inputemail' AND password='$inputpassword'";
+
+                        $result = mysqli_query($link, $query);
+
+                        if (mysqli_num_rows($result) == 1){
+
+                            $dataUser = mysqli_fetch_object($result);
+
+                            $_SESSION['login'] = true;
+                            $_SESSION['nama_lengkap'] = $dataUser->nama_lengkap;
+                            $_SESSION['role'] = $dataUser->role;
+
+                            header('location: ../Penulis/tampil.php');
+                        
+                        } else {
+                        
+                            echo    '<div class="alert alert-danger">Gagal Login, Silahkan periksa 
+                                    email / password anda.</div>';
+                        
+                        }
+
                     }
                     ?>
 

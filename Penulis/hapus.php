@@ -1,4 +1,15 @@
 <?php
+session_start();
+
+if($_SESSION['login'] == false){
+
+    header('location: ../auth/login.php');
+
+}
+
+?>
+
+<?php
 
 require("../setting.php");
 

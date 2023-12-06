@@ -1,12 +1,14 @@
 <?php
 session_start();
-if(!isset($_SESSION['success'])){
+
+if($_SESSION['login'] == false){
 
     header('location: ../auth/login.php');
 
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,9 +24,13 @@ if(!isset($_SESSION['success'])){
     <div class="container">
         <h2 class="alert alert-info" style="text-align:center">Data Penulis</h2>
 
+        <h3>Selamat datang : <?php echo $_SESSION['nama_lengkap'];  ?> </h3>
+
+        <a  href="../auth/logout.php"
+            onclick="return confirm('Anda Yakin ?')" 
+            class="btn btn-danger mb-3 float-end">Logout</a>
 
         <a href="tambah.php" class="btn btn-primary mb-3">Tambah Data</a>
-
 
         <table class="table table-bordered table-hover">
             <thead>
