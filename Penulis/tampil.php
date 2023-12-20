@@ -22,7 +22,9 @@ if($_SESSION['login'] == false){
 
 <body>
     <div class="container">
-        <h2 class="alert alert-info" style="text-align:center">Data Penulis</h2>
+    <?php include('../navbar.php'); ?>
+
+    <h2 class="alert alert-info" style="text-align:center">Data Penulis</h2>
 
         <h3>Selamat datang : <?php echo $_SESSION['nama_lengkap'];  ?> </h3>
 
