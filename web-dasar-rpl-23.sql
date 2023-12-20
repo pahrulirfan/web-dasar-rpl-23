@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2023 at 05:07 AM
+-- Generation Time: Dec 20, 2023 at 05:09 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -21,6 +21,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `web-dasar-rpl-23`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buku`
+--
+
+CREATE TABLE `buku` (
+  `id` int(11) NOT NULL,
+  `penulis_id` int(11) NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `penerbit` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `buku`
+--
+
+INSERT INTO `buku` (`id`, `penulis_id`, `judul`, `penerbit`) VALUES
+(1, 1, 'Sistem informasi terintegrasi', 'Andi Ofset'),
+(2, 4, 'Sistem informasi terintegrasi', 'Rumah Buku'),
+(3, 6, 'Sistem informasi terintegrasi', 'Andi Ofset');
 
 -- --------------------------------------------------------
 
@@ -63,11 +85,18 @@ CREATE TABLE `penulis` (
 
 INSERT INTO `penulis` (`id`, `nama`, `alamat`, `hp`) VALUES
 (1, 'Pahrul Irfan', 'Mataram', '08239478932'),
-(4, 'Ahmad', 'Mataram Karang Pule', '08239483292');
+(4, 'Ahmad', 'Mataram Karang Pule', '08239483292'),
+(6, 'Rama ganteng', 'Mataram lombok', '0982384932');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `buku`
+--
+ALTER TABLE `buku`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pengguna`
@@ -86,6 +115,12 @@ ALTER TABLE `penulis`
 --
 
 --
+-- AUTO_INCREMENT for table `buku`
+--
+ALTER TABLE `buku`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
@@ -95,7 +130,7 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `penulis`
 --
 ALTER TABLE `penulis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
